@@ -22,6 +22,8 @@
   width: 100%;
   max-width: 100%;
   height: auto;
+  position: relative;
+  top: -10px;
 }
 .todo-app {
   width: 100%;
@@ -30,6 +32,10 @@
   border-radius: 10px;
   background-color: #fff;
   padding: 30px;
+  position: relative;
+  top: -200px;
+  margin-left: 4rem;
+  background-position: center;
 }
 .todo-app h2 {
   /* para ajustar y dar estilo a la imagen*/
