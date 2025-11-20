@@ -5,11 +5,57 @@
   padding: 0;
   box-sizing: border-box;
 }
-@media (max-width: 37.5rem) {
+@media (max-width: 37.5rem) { /* 600px */
+  .container {
+    padding: 5%; /* menos espacio en móviles */
+    top: 0; /* evita que el contenido se corte */
+  }
+
+  .todo-app {
+    margin: 50px auto 20px; /* reduce el margen superior */
+    padding: 20px; /* menos padding para móviles */
+    max-width: 90%; /* ocupa casi todo el ancho de la pantalla */
+  }
+
+  .todo-app h2 {
+    font-size: 20px; /* tamaño de texto más pequeño */
+  }
+
+  .todo-app h2 img {
+    width: 20px; /* imagen más pequeña en el título */
+    margin-left: 5px;
+  }
+
+  input {
+    font-size: 14px; /* input más compacto */
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 16px; /* botón más pequeño */
+    font-size: 14px;
+  }
+
+  ul li {
+    font-size: 15px; /* texto de lista más pequeño */
+    padding: 10px 8px 10px 45px; /* ajusta padding para el círculo */
+  }
+
+  ul li::before {
+    height: 24px;
+    width: 24px; /* círculo más pequeño */
+    top: 10px;
+    left: 6px;
+  }
+
+  ul li span {
+    width: 25px;
+    height: 25px;
+    line-height: 25px; /* botón eliminar más pequeño */
+    top: 4px;
+  }
 }
-.saludo {
-  color: #002765;
-}
+
 
 .container {
   min-height: 100vh;
@@ -32,10 +78,8 @@
   border-radius: 10px;
   background-color: #fff;
   padding: 30px;
-  position: relative;
-  top: -200px;
-  margin-left: 4rem;
   background-position: center;
+  opacity: 0.8;
 }
 .todo-app h2 {
   /* para ajustar y dar estilo a la imagen*/
@@ -118,4 +162,3 @@ ul li span {
 }
 ul li span:hover {
   background: #e70303;
-}
