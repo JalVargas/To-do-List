@@ -64,6 +64,27 @@
     box-shadow: 0 0 20px rgba(20, 97, 197, 0.8), 0 0 30px rgba(20, 97, 197, 0.6);
   }
 }
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  z-index: 9999;
+  animation: confettiFall 3s linear forwards;
+  pointer-events: none;
+}
 @media (max-width: 37.5rem) {
   /* 600px */
   .container {
