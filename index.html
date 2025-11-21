@@ -3,11 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-do list app - Easy tutorials</title>
+    <link rel="icon" type="" href="/images/icon.avif" />
+    <title>To-do list</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <input id="saludo" type="text" placeholder="Hola Dylan Gomez" />
+    <style>
+      h1 {
+        color: aliceblue;
+        padding: 20px;
+        margin: 0;
+        position: relative;
+        animation: slideLeftToRight 30s ease-in-out infinite;
+        text-align: center;
+      }
+      @keyframes slideLeftToRight {
+        0% {
+          left: -100%;
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          left: 100%;
+          opacity: 0;
+        }
+      }
+    </style>
+    <h1 style="background: linear-gradient(135deg, #1461c5, #040404)">
+      Hola Dylan Gomez hoy tienes para hacer
+    </h1>
     <div class="container">
       <div class="todo-app">
         <h2>To-Do List <img src="images/icon.png" /></h2>

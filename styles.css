@@ -5,7 +5,67 @@
   padding: 0;
   box-sizing: border-box;
 }
-@media (max-width: 37.5rem) { /* 600px */
+
+/* Animaciones Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(20, 97, 197, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(20, 97, 197, 0.8), 0 0 30px rgba(20, 97, 197, 0.6);
+  }
+}
+@media (max-width: 37.5rem) {
+  /* 600px */
   .container {
     padding: 5%; /* menos espacio en móviles */
     top: 0; /* evita que el contenido se corte */
@@ -56,10 +116,9 @@
   }
 }
 
-
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #457fca, #5691c8);
+  background: linear-gradient(135deg, #1461c5, #040404);
   padding: 10%;
   background-image: url("/images/robots.jpeg");
   background-repeat: none;
@@ -69,7 +128,6 @@
   max-width: 100%;
   height: auto;
   position: relative;
-  top: -10px;
 }
 .todo-app {
   width: 100%;
@@ -80,6 +138,7 @@
   padding: 30px;
   background-position: center;
   opacity: 0.8;
+  animation: fadeInUp 0.8s ease-out;
 }
 .todo-app h2 {
   /* para ajustar y dar estilo a la imagen*/
@@ -87,6 +146,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  animation: bounce 2s infinite;
 }
 .todo-app h2 img {
   /*ajustar  la imagen en el texto*/
@@ -101,6 +161,12 @@
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.row:focus-within {
+  animation: glow 2s infinite;
+  transform: scale(1.02);
 }
 input {
   flex: 1;
@@ -118,6 +184,13 @@ button {
   padding: 10px 20px;
   border-radius: 40px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  animation: pulse 0.6s ease;
+  background: #ff0000;
+  transform: scale(1.1);
 }
 ul li {
   list-style: none;
@@ -126,6 +199,13 @@ ul li {
   user-select: none;
   cursor: pointer;
   position: relative;
+  animation: slideInRight 0.5s ease-out;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+ul li:hover {
+  background-color: #f0f8ff;
+  transform: translateX(5px);
 }
 
 ul li::before {
@@ -143,6 +223,7 @@ ul li::before {
 ul li.checked {
   color: #888;
   text-decoration: line-through;
+  animation: pulse 0.4s ease;
 }
 ul li.checked::before {
   background-image: url("images/checked.png");
@@ -159,6 +240,10 @@ ul li span {
   line-height: 30px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 ul li span:hover {
   background: #e70303;
+  animation: shake 0.5s ease;
+  transform: rotate(90deg);
+}
